@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        .my-col {
+            margin-bottom: 10px;
+
+        }
+        .my-card {
+            margin-bottom: 5px;
+        }
+    </style>
+    <title>Team Profile</title>
+
+</head>
+
+<body class="container-fluid">
+    
+    <header class="container-fluid jumbotron">
+        <h1 class="display-3 text-center">My Team</h1>
+    </header>
+    <main class="container-fluid text-center">
+        <div class="row row-cols-3 align-items-center justify-content-center">
+
+        </div>
+    </main>
+    <script>
+        
+    let rowEl = document.querySelector('.row');
+    rowEl.innerHTML = '';
+    employeeEl0 = document.createElement('div');
+    cardEl0 = document.createElement('div');
+    cardHeaderEl0 = document.createElement("div");
+    nameEl0 = document.createElement("h4");
+    roleEl0 = document.createElement("h4");
+    cardBodyEl0 = document.createElement("div");
+    listEl0 = document.createElement("ul");
+    idEl0 = document.createElement("li");
+    emailEl0 = document.createElement("li");
+    infoEl0 = document.createElement("li");
+    emailLinkEl0 = document.createElement("a");
+    githubLinkEl0 = document.createElement("a");
+
+    employeeEl0.classList.add("col", "my-col");
+    cardEl0.classList.add("card", "text-left");
+    cardHeaderEl0.classList.add("card-header");
+    cardBodyEl0.classList.add("card-body");
+    listEl0.classList.add("list-group");
+    idEl0.classList.add("list-group-item");
+    emailEl0.classList.add("list-group-item");
+    infoEl0.classList.add("list-group-item");
+
+    nameEl0.textContent = 'Maria';
+    roleEl0.textContent = 'Manager';
+
+    idEl0.textContent = 'ID: 1';
+    emailLinkEl0.setAttribute("href", "mailto:test");
+    emailLinkEl0.textContent = 'Email: test';
+
+    infoEl0.textContent = "Office Number: " + "10";;
+
+    cardHeaderEl0.appendChild(nameEl0);
+    cardHeaderEl0.appendChild(roleEl0);
+
+    listEl0.appendChild(idEl0);
+    emailEl0.appendChild(emailLinkEl0);
+    listEl0.appendChild(emailEl0);
+    listEl0.appendChild(infoEl0);
+    cardBodyEl0.appendChild(listEl0);
+    
+    cardEl0.appendChild(cardHeaderEl0);
+    cardEl0.appendChild(cardBodyEl0);
+
+    employeeEl0.appendChild(cardEl0);
+    rowEl.appendChild(employeeEl0);
+    
+    employeeEl1 = document.createElement('div');
+    cardEl1 = document.createElement('div');
+    cardHeaderEl1 = document.createElement("div");
+    nameEl1 = document.createElement("h4");
+    roleEl1 = document.createElement("h4");
+    cardBodyEl1 = document.createElement("div");
+    listEl1 = document.createElement("ul");
+    idEl1 = document.createElement("li");
+    emailEl1 = document.createElement("li");
+    infoEl1 = document.createElement("li");
+    emailLinkEl1 = document.createElement("a");
+    githubLinkEl1 = document.createElement("a");
+
+    employeeEl1.classList.add("col", "my-col");
+    cardEl1.classList.add("card", "text-left");
+    cardHeaderEl1.classList.add("card-header");
+    cardBodyEl1.classList.add("card-body");
+    listEl1.classList.add("list-group");
+    idEl1.classList.add("list-group-item");
+    emailEl1.classList.add("list-group-item");
+    infoEl1.classList.add("list-group-item");
+
+    nameEl1.textContent = 'Brenda';
+    roleEl1.textContent = 'Engineer';
+
+    idEl1.textContent = 'ID: 2';
+    emailLinkEl1.setAttribute("href", "mailto:test");
+    emailLinkEl1.textContent = 'Email: test';
+
+    
+        githubLinkEl1.setAttribute("href", "https://github.com/test");
+        githubLinkEl1.setAttribute("target", "_blank");
+        githubLinkEl1.textContent = "GitHub: " + "test";
+        infoEl1.appendChild(githubLinkEl1);
+        ;
+
+    cardHeaderEl1.appendChild(nameEl1);
+    cardHeaderEl1.appendChild(roleEl1);
+
+    listEl1.appendChild(idEl1);
+    emailEl1.appendChild(emailLinkEl1);
+    listEl1.appendChild(emailEl1);
+    listEl1.appendChild(infoEl1);
+    cardBodyEl1.appendChild(listEl1);
+    
+    cardEl1.appendChild(cardHeaderEl1);
+    cardEl1.appendChild(cardBodyEl1);
+
+    employeeEl1.appendChild(cardEl1);
+    rowEl.appendChild(employeeEl1);
+    
+    employeeEl2 = document.createElement('div');
+    cardEl2 = document.createElement('div');
+    cardHeaderEl2 = document.createElement("div");
+    nameEl2 = document.createElement("h4");
+    roleEl2 = document.createElement("h4");
+    cardBodyEl2 = document.createElement("div");
+    listEl2 = document.createElement("ul");
+    idEl2 = document.createElement("li");
+    emailEl2 = document.createElement("li");
+    infoEl2 = document.createElement("li");
+    emailLinkEl2 = document.createElement("a");
+    githubLinkEl2 = document.createElement("a");
+
+    employeeEl2.classList.add("col", "my-col");
+    cardEl2.classList.add("card", "text-left");
+    cardHeaderEl2.classList.add("card-header");
+    cardBodyEl2.classList.add("card-body");
+    listEl2.classList.add("list-group");
+    idEl2.classList.add("list-group-item");
+    emailEl2.classList.add("list-group-item");
+    infoEl2.classList.add("list-group-item");
+
+    nameEl2.textContent = 'John';
+    roleEl2.textContent = 'Engineer';
+
+    idEl2.textContent = 'ID: 3';
+    emailLinkEl2.setAttribute("href", "mailto:test");
+    emailLinkEl2.textContent = 'Email: test';
+
+    
+        githubLinkEl2.setAttribute("href", "https://github.com/test");
+        githubLinkEl2.setAttribute("target", "_blank");
+        githubLinkEl2.textContent = "GitHub: " + "test";
+        infoEl2.appendChild(githubLinkEl2);
+        ;
+
+    cardHeaderEl2.appendChild(nameEl2);
+    cardHeaderEl2.appendChild(roleEl2);
+
+    listEl2.appendChild(idEl2);
+    emailEl2.appendChild(emailLinkEl2);
+    listEl2.appendChild(emailEl2);
+    listEl2.appendChild(infoEl2);
+    cardBodyEl2.appendChild(listEl2);
+    
+    cardEl2.appendChild(cardHeaderEl2);
+    cardEl2.appendChild(cardBodyEl2);
+
+    employeeEl2.appendChild(cardEl2);
+    rowEl.appendChild(employeeEl2);
+    
+    employeeEl3 = document.createElement('div');
+    cardEl3 = document.createElement('div');
+    cardHeaderEl3 = document.createElement("div");
+    nameEl3 = document.createElement("h4");
+    roleEl3 = document.createElement("h4");
+    cardBodyEl3 = document.createElement("div");
+    listEl3 = document.createElement("ul");
+    idEl3 = document.createElement("li");
+    emailEl3 = document.createElement("li");
+    infoEl3 = document.createElement("li");
+    emailLinkEl3 = document.createElement("a");
+    githubLinkEl3 = document.createElement("a");
+
+    employeeEl3.classList.add("col", "my-col");
+    cardEl3.classList.add("card", "text-left");
+    cardHeaderEl3.classList.add("card-header");
+    cardBodyEl3.classList.add("card-body");
+    listEl3.classList.add("list-group");
+    idEl3.classList.add("list-group-item");
+    emailEl3.classList.add("list-group-item");
+    infoEl3.classList.add("list-group-item");
+
+    nameEl3.textContent = 'Steve';
+    roleEl3.textContent = 'Intern';
+
+    idEl3.textContent = 'ID: 4';
+    emailLinkEl3.setAttribute("href", "mailto:test");
+    emailLinkEl3.textContent = 'Email: test';
+
+    infoEl3.textContent = "School: " + "undefined";;
+
+    cardHeaderEl3.appendChild(nameEl3);
+    cardHeaderEl3.appendChild(roleEl3);
+
+    listEl3.appendChild(idEl3);
+    emailEl3.appendChild(emailLinkEl3);
+    listEl3.appendChild(emailEl3);
+    listEl3.appendChild(infoEl3);
+    cardBodyEl3.appendChild(listEl3);
+    
+    cardEl3.appendChild(cardHeaderEl3);
+    cardEl3.appendChild(cardBodyEl3);
+
+    employeeEl3.appendChild(cardEl3);
+    rowEl.appendChild(employeeEl3);
+    
+    employeeEl4 = document.createElement('div');
+    cardEl4 = document.createElement('div');
+    cardHeaderEl4 = document.createElement("div");
+    nameEl4 = document.createElement("h4");
+    roleEl4 = document.createElement("h4");
+    cardBodyEl4 = document.createElement("div");
+    listEl4 = document.createElement("ul");
+    idEl4 = document.createElement("li");
+    emailEl4 = document.createElement("li");
+    infoEl4 = document.createElement("li");
+    emailLinkEl4 = document.createElement("a");
+    githubLinkEl4 = document.createElement("a");
+
+    employeeEl4.classList.add("col", "my-col");
+    cardEl4.classList.add("card", "text-left");
+    cardHeaderEl4.classList.add("card-header");
+    cardBodyEl4.classList.add("card-body");
+    listEl4.classList.add("list-group");
+    idEl4.classList.add("list-group-item");
+    emailEl4.classList.add("list-group-item");
+    infoEl4.classList.add("list-group-item");
+
+    nameEl4.textContent = 'Alex';
+    roleEl4.textContent = 'Intern';
+
+    idEl4.textContent = 'ID: 5';
+    emailLinkEl4.setAttribute("href", "mailto:test");
+    emailLinkEl4.textContent = 'Email: test';
+
+    infoEl4.textContent = "School: " + "undefined";;
+
+    cardHeaderEl4.appendChild(nameEl4);
+    cardHeaderEl4.appendChild(roleEl4);
+
+    listEl4.appendChild(idEl4);
+    emailEl4.appendChild(emailLinkEl4);
+    listEl4.appendChild(emailEl4);
+    listEl4.appendChild(infoEl4);
+    cardBodyEl4.appendChild(listEl4);
+    
+    cardEl4.appendChild(cardHeaderEl4);
+    cardEl4.appendChild(cardBodyEl4);
+
+    employeeEl4.appendChild(cardEl4);
+    rowEl.appendChild(employeeEl4);
+    
+    </script>
+</body>
+
+</html>

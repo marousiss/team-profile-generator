@@ -1,11 +1,10 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateHtml = require('./src/generateHTML');
 const Employee = require('./lib/Employee');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
-
-//const { createHistogram } = require('perf_hooks');
 
 let employees = [];
 let menuOption = "";
@@ -54,7 +53,7 @@ function addManager() {
                 id: manager.getId(),
                 email: manager.getEmail(),
                 role: manager.getRole(),
-                officeNumber: manager.getOfficeNumber(),
+                otherInfo: manager.getOfficeNumber(),
             };
 
             employees.push(managerInfo);
@@ -75,7 +74,7 @@ function menu() {
     getmenuOption().then(() => {
         if (menuOption === "Finish") {
             displayEmployeeArray();
-            //writeToFile();
+            writeToFile();
         } else {
             if (menuOption === "Add an engineer") {
                 addEngineer().then(() => {
@@ -140,7 +139,7 @@ function addEngineer() {
                 id: engineer.getId(),
                 email: engineer.getEmail(),
                 role: engineer.getRole(),
-                github: engineer.getGithub(),
+                otherInfo: engineer.getGithub(),
             }
             employees.push(enginnerInfo);
 
@@ -194,7 +193,7 @@ function addIntern() {
                 id: intern.getId(),
                 email: intern.getEmail(),
                 role: intern.getRole(),
-                school: intern.getSchool(),
+                otheInfo: intern.getSchool(),
             }
             employees.push(internInfo);
 
@@ -215,5 +214,10 @@ function displayEmployeeArray() {
     console.log(employees);
 }
 
+function writeToFile() {
+    fs.writeFile('./dist/index.html', `${generateHtml(employees)}`, (err) => 
+        err ? console.log(err) : console.log("HTML file successfully generated!")
+    );
+}
 
 createTeamRoster();
