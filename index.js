@@ -1,10 +1,12 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateHtml = require('./src/generateHTML');
+const validateUserInput = require('./src/validateUserInput');
 const Employee = require('./lib/Employee');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+const { validateHeaderName } = require('http');
 
 let employees = [];
 let menuOption = "";
@@ -25,21 +27,29 @@ function addManager() {
             type: 'input',
             name: 'name',
             message: "Please enter manager's name:",
+            //user input must be alpha characters
+            validate: (val) => validateUserInput.valName(val),
         },
         {
             type: 'input',
             name: 'id',
             message: "Please enter manager's ID:",
+            //user input must of numeric characters
+            validate: (val) => validateUserInput.valId(val),
         },
         {
             type: 'input',
             name: 'email',
-            message: "Please enter manager's email:"
+            message: "Please enter manager's email:",
+            //user must enter a valid email address
+            validate: (val) => validateUserInput.valEmail(val),
         },
         {
             type: 'input',
             name: 'officeNumber',
-            message: "Please enter manager's office number:"
+            message: "Please enter manager's office number:",
+            //user input must be of numeric characters
+            validate: (val) => validateUserInput.valOfficeNumber(val),
         },
     ];
 
@@ -69,11 +79,12 @@ function addManager() {
 
 }
 
+
 //function to loop through the menu options
 function menu() {
     getmenuOption().then(() => {
         if (menuOption === "Finish") {
-            displayEmployeeArray();
+            //displayEmployeeArray();
             writeToFile();
         } else {
             if (menuOption === "Add an engineer") {
@@ -109,21 +120,25 @@ function addEngineer() {
             type: 'input',
             name: 'name',
             message: "Please enter engineer's Name:",
+            validate: (val) => validateUserInput.valName(val),
         },
         {
             type: 'input',
             name: 'id',
             message: "Please enter engineer's ID:",
+            validate: (val) => validateUserInput.valId(val),
         },
         {
             type: 'input',
             name: 'email',
-            message: "Please enter engineer's Email:"
+            message: "Please enter engineer's Email:",
+            validate: (val) => validateUserInput.valEmail(val),
         },
         {
             type: 'input',
             name: 'github',
-            message: "Please enter engineer's GitHub:"
+            message: "Please enter engineer's GitHub:",
+            validate: (val) => validateUserInput.valGitHub(val),
         },
     ];
 
@@ -162,21 +177,25 @@ function addIntern() {
             type: 'input',
             name: 'name',
             message: "Please enter intern's Name:",
+            validate: (val) => validateUserInput.valName(val),
         },
         {
             type: 'input',
             name: 'id',
             message: "Please enter intern's ID:",
+            validate: (val) => validateUserInput.valId(val),
         },
         {
             type: 'input',
             name: 'email',
-            message: "Please enter intern's Email:"
+            message: "Please enter intern's Email:",
+            validate: (val) => validateUserInput.valEmail(val),
         },
         {
             type: 'input',
             name: 'school',
-            message: "Please enter intern's School:"
+            message: "Please enter intern's School:",
+            validate: (val) => validateUserInput.valSchool(val),
         },
     ];
 
@@ -193,7 +212,7 @@ function addIntern() {
                 id: intern.getId(),
                 email: intern.getEmail(),
                 role: intern.getRole(),
-                otheInfo: intern.getSchool(),
+                otherInfo: intern.getSchool(),
             }
             employees.push(internInfo);
 
