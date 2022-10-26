@@ -4,7 +4,7 @@
 
 This is a command-line application that dynamically generates an index.html file from a user's input.
 
-Video link: https://drive.google.com/file/d/19-b0mAmXBjBwYmNvrwbmVusVnr3i6ERC/view
+Video link: https://drive.google.com/file/d/19-b0mAmXBjBwYmNvrwbmVusVnr3i6ERC/view?usp=sharing
 
 
 ## Installation
